@@ -78,22 +78,46 @@ export default function AboutUs() {
         </motion.p>
 
         {/* Journey Section */}
-        <motion.div
-          className="bg-white shadow-xl rounded-lg p-8 mb-12"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-2xl font-bold text-indigo-600 mb-4 flex items-center gap-2">
-            <Rocket className="text-indigo-600" /> Our Journey
-          </h3>
-          <p className="text-gray-700 leading-relaxed">
-            With over 30+ years of collective experience in the media and entertainment industry,
-            our team brings deep knowledge, passion, and innovation to every project. From handling
-            major digital campaigns to building creator brands from scratch, we’ve helped shape
-            online presences that thrive.
-          </p>
-        </motion.div>
+{/* Our Journey Section */}
+<motion.div
+  className="bg-white shadow-2xl rounded-2xl p-10 mb-16 border-l-8 border-indigo-500"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="flex items-center gap-2 text-indigo-600 mb-4">
+    <Rocket size={28} />
+    <h3 className="text-3xl font-bold">Our Journey: Powered by Experience, Driven by Innovation</h3>
+  </div>
+  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+    With over <strong>three decades of collective experience</strong> in the dynamic world of media and entertainment,
+    <strong> SUV Fortune Vision</strong> has grown into a force of creativity, strategy, and digital evolution.
+  </p>
+
+  <ul className="space-y-4 text-gray-700 text-base list-disc list-inside pl-2">
+    <li>
+      <strong>30+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
+      and production excellence.
+    </li>
+    <li>
+      Successfully executed <strong>100+ campaigns</strong> across brands, OTT platforms, and digital influencers.
+    </li>
+    <li>
+      <strong>Transformed creator journeys</strong>—from zero visibility to building 6- and 7-figure digital communities.
+    </li>
+    <li>
+      Early adopters of <strong>cutting-edge tech</strong> like AI-driven tools, short-form automation, and audience analytics.
+    </li>
+    <li>
+      Rooted in a <strong>client-first philosophy</strong>—offering custom, hands-on, and result-focused solutions.
+    </li>
+  </ul>
+
+  <p className="mt-6 text-gray-800 text-lg font-medium">
+    We don’t just deliver content—we <span className="text-indigo-600 font-semibold">craft digital legacies</span>.
+  </p>
+</motion.div>
+
 
         {/* Team Section */}
 <motion.div
