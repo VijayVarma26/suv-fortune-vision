@@ -36,6 +36,21 @@ const teamMembers = [
   },
 ];
 
+const getMemberBio = (name) => {
+  switch (name) {
+    case 'Sanjay Vasankar':
+      return `Sanjay brings over 15 years of visionary leadership to SUV Fortune Vision. As Founder & CEO, he’s known for launching breakthrough digital campaigns, guiding major media houses and content creators toward unmatched success. His forward-thinking strategies have defined new paradigms in entertainment marketing, storytelling, and monetization.`;
+    case 'Shaliendra Salunkhe':
+      return `With a deep eye for cinematic storytelling and years of experience behind the editing desk, Shaliendra leads our production vertical. His finesse in editing and post-production has shaped viral content and award-winning digital series, pushing creative boundaries in short-form media.`;
+    case 'Ashwin Chinchkhede':
+      return `Ashwin is the narrative powerhouse of our team. He crafts content strategies that don’t just speak, but resonate. From brand storytelling to influencer engagement, he aligns creativity with business outcomes to create compelling campaigns that stand out in today’s saturated digital landscape.`;
+    case 'Rajesh Yadav':
+      return `Rajesh is a data-driven digital growth specialist. As our SEO and Monetization Lead, he ensures content not only reaches the right audience but also drives real results. With a keen grasp of platform algorithms and ad ecosystems, he turns creative assets into revenue-generating engines.`;
+    default:
+      return `This team member is an integral part of our journey, contributing expertise and energy to everything we do.`;
+  }
+};
+
 export default function AboutUs() {
   return (
     <div className="bg-gradient-to-b from-indigo-50 to-white py-16 px-6 text-gray-800">
@@ -80,50 +95,43 @@ export default function AboutUs() {
           </p>
         </motion.div>
 
-        {/* Team Carousel */}
-        <motion.div
-          className="bg-white shadow-xl rounded-lg p-8 mb-16"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-pink-600 mb-6 flex items-center gap-2">
-            <Users className="text-pink-600" /> Meet the Core Team
-          </h3>
+        {/* Team Section */}
+<motion.div
+  className="bg-white shadow-xl rounded-lg p-8 mb-16"
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.2, duration: 0.6 }}
+>
+  <h3 className="text-2xl font-bold text-pink-600 mb-8 flex items-center gap-2">
+    <Users className="text-pink-600" /> Meet the Core Team
+  </h3>
 
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={20}
-            pagination={{ clickable: true }}
-            navigation
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-            }}
-            modules={[Pagination, Navigation]}
-            className="teamSwiper"
-          >
-            {teamMembers.map((member) => (
-              <SwiperSlide key={member.name}>
-                <motion.div
-                  className="bg-pink-100 text-pink-800 p-4 rounded-xl shadow hover:bg-pink-200 transition cursor-pointer h-full flex flex-col items-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <img
-                    src={member.photo}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mb-3 object-cover border-4 border-pink-300"
-                  />
-                  <h4 className="font-semibold text-lg">{member.name}</h4>
-                  <p className="text-sm font-medium text-pink-700">{member.role}</p>
-                  <p className="text-xs mt-1 text-pink-700 text-center">{member.description}</p>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+  <div className="space-y-12">
+    {teamMembers.map((member, index) => (
+      <motion.div
+        key={member.name}
+        className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-pink-50 p-6 rounded-xl shadow-md"
+        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.2 }}
+      >
+        <img
+          src={member.photo || 'https://via.placeholder.com/300x300'}
+          alt={member.name}
+          className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
+        />
+        <div className="flex-1 text-left">
+          <h4 className="text-xl md:text-2xl font-bold text-pink-700">{member.name}</h4>
+          <p className="text-pink-600 font-medium text-lg mb-4">{member.role}</p>
+          <p className="text-gray-700 text-base leading-relaxed">
+            {getMemberBio(member.name)}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
 
         {/* CTA Section */}
         <motion.div
