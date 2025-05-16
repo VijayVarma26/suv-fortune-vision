@@ -1,8 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Sparkles, Scissors, TrendingUp } from 'lucide-react';
 
 export default function Home() {
+  const services = [
+    {
+      title: 'Social Media Management',
+      description:
+        'Boost engagement with platform-specific strategies, trend-driven content, and hands-on community building.',
+      icon: <Sparkles size={32} className="text-yellow-600" />,
+      bg: 'from-yellow-100 to-yellow-200',
+    },
+    {
+      title: 'Video Editing',
+      description:
+        'Turn raw footage into scroll-stopping stories with cinematic cuts, effects, and platform-optimized formats.',
+      icon: <Scissors size={32} className="text-green-600" />,
+      bg: 'from-green-100 to-green-200',
+    },
+    {
+      title: 'SEO & Growth',
+      description:
+        'Skyrocket visibility and engagement with search-optimized content, growth tactics, and data-driven campaigns.',
+      icon: <TrendingUp size={32} className="text-blue-600" />,
+      bg: 'from-blue-100 to-blue-200',
+    },
+  ];
   return (
     <div className="text-gray-900">
       {/* Hero Section */}
@@ -45,38 +69,35 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 px-6 bg-gray-50">
-        <h2 className="text-4xl font-bold text-center mb-14 text-gray-800">Our Expertise</h2>
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            {
-              title: 'Social Media Management',
-              description: 'Boost your engagement with strategic content and community handling.',
-              color: 'from-yellow-100 to-yellow-300',
-            },
-            {
-              title: 'Video Editing',
-              description: 'Professional editing with storytelling that converts viewers into fans.',
-              color: 'from-green-100 to-green-300',
-            },
-            {
-              title: 'SEO & Growth',
-              description: 'Rank higher, grow faster, and reach the audience you deserve.',
-              color: 'from-blue-100 to-blue-300',
-            },
-          ].map(({ title, description, color }) => (
-            <motion.div
-              key={title}
-              whileHover={{ scale: 1.05 }}
-              className={`bg-gradient-to-br ${color} p-6 rounded-3xl shadow-xl transition-all`}
-            >
-              <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
-              <p className="text-gray-700">{description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <section className="relative py-24 px-6 bg-gradient-to-br from-white via-indigo-50 to-white overflow-hidden">
+      <div className="absolute top-[-100px] left-[-80px] w-[300px] h-[300px] bg-gradient-to-tr from-pink-300 to-indigo-400 opacity-20 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-[-100px] right-[-80px] w-[300px] h-[300px] bg-gradient-to-br from-blue-300 to-purple-400 opacity-20 rounded-full blur-3xl -z-10" />
 
+      <h2 className="text-4xl font-extrabold text-center mb-16 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-pink-500">
+        Our Expertise
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        {services.map(({ title, description, icon, bg }, i) => (
+          <motion.div
+            key={title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
+            whileHover={{ scale: 1.05 }}
+            className={`relative p-8 rounded-3xl shadow-2xl bg-gradient-to-br ${bg} transition-all hover:shadow-pink-200`}
+          >
+            <div className="mb-4">{icon}</div>
+            <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
+            <p className="text-gray-700 leading-relaxed">{description}</p>
+            <div className="absolute bottom-3 right-3 opacity-10 text-7xl font-black -z-10">
+              {title.split(' ')[0]}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
       {/* Why Choose Us */}
       <section className="py-20 bg-white text-center px-6">
         <h2 className="text-4xl font-bold mb-6 text-gray-800">Why SUV Fortune Vision?</h2>
