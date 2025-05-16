@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Rocket, Star, Mail, Briefcase } from 'lucide-react';
+import { Users, Rocket, Star, Mail, Briefcase, Sparkles, TrendingUp, Handshake } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 
@@ -77,7 +77,8 @@ export default function AboutUs() {
           monetization strategies for top brands and individual creators.
         </motion.p>
 
-        {/* Journey Section */}
+
+{/* Our Journey Section */}
 {/* Our Journey Section */}
 <motion.div
   className="bg-white shadow-2xl rounded-2xl p-10 mb-16 border-l-8 border-indigo-500"
@@ -89,34 +90,55 @@ export default function AboutUs() {
     <Rocket size={28} />
     <h3 className="text-3xl font-bold">Our Journey: Powered by Experience, Driven by Innovation</h3>
   </div>
+
   <p className="text-gray-700 text-lg leading-relaxed mb-6">
     With over <strong>three decades of collective experience</strong> in the dynamic world of media and entertainment,
     <strong> SUV Fortune Vision</strong> has grown into a force of creativity, strategy, and digital evolution.
   </p>
 
-  <ul className="space-y-4 text-gray-700 text-base list-disc list-inside pl-2">
-    <li>
-      <strong>30+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
-      and production excellence.
-    </li>
-    <li>
-      Successfully executed <strong>100+ campaigns</strong> across brands, OTT platforms, and digital influencers.
-    </li>
-    <li>
-      <strong>Transformed creator journeys</strong>—from zero visibility to building 6- and 7-figure digital communities.
-    </li>
-    <li>
-      Early adopters of <strong>cutting-edge tech</strong> like AI-driven tools, short-form automation, and audience analytics.
-    </li>
-    <li>
-      Rooted in a <strong>client-first philosophy</strong>—offering custom, hands-on, and result-focused solutions.
-    </li>
-  </ul>
+  <div className="space-y-6">
+    <div className="flex items-start gap-4">
+      <Users className="text-indigo-500 mt-1" size={22} />
+      <p className="text-gray-700 text-base">
+        <strong>30+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
+        and production excellence.
+      </p>
+    </div>
 
-  <p className="mt-6 text-gray-800 text-lg font-medium">
+    <div className="flex items-start gap-4">
+      <TrendingUp className="text-green-500 mt-1" size={22} />
+      <p className="text-gray-700 text-base">
+        Successfully executed <strong>100+ campaigns</strong> across brands, OTT platforms, and digital influencers.
+      </p>
+    </div>
+
+    <div className="flex items-start gap-4">
+      <Sparkles className="text-pink-500 mt-1" size={22} />
+      <p className="text-gray-700 text-base">
+        <strong>Transformed creator journeys</strong>—from zero visibility to building 6- and 7-figure digital communities.
+      </p>
+    </div>
+
+    <div className="flex items-start gap-4">
+      <Rocket className="text-purple-500 mt-1" size={22} />
+      <p className="text-gray-700 text-base">
+        Early adopters of <strong>cutting-edge tech</strong> like AI-driven tools, short-form automation, and audience analytics.
+      </p>
+    </div>
+
+    <div className="flex items-start gap-4">
+      <Handshake className="text-yellow-500 mt-1" size={22} />
+      <p className="text-gray-700 text-base">
+        Rooted in a <strong>client-first philosophy</strong>—offering custom, hands-on, and result-focused solutions.
+      </p>
+    </div>
+  </div>
+
+  <p className="mt-8 text-gray-800 text-lg font-medium">
     We don’t just deliver content—we <span className="text-indigo-600 font-semibold">craft digital legacies</span>.
   </p>
 </motion.div>
+
 
 
         {/* Team Section */}
