@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Trophy, Users } from 'lucide-react';
+import { Sparkles, Trophy, Users, TrendingUp, DollarSign } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 export default function Clients() {
   const topBrands = ['Sony', 'Jio Hotstar', 'Myntra'];
@@ -15,6 +16,16 @@ export default function Clients() {
     'Creator H',
     'Creator I',
     'Creator J',
+  ];
+  const growthData = [
+    { month: 'Month 1', followers: 5000 },
+    { month: 'Month 2', followers: 12000 },
+    { month: 'Month 3', followers: 30000 },
+    { month: 'Month 4', followers: 60000 },
+    { month: 'Month 5', followers: 100000 },
+    { month: 'Month 6', followers: 150000 },
+    { month: 'Month 7', followers: 180000 },
+    { month: 'Month 8', followers: 200000 },
   ];
 
   return (
@@ -78,26 +89,74 @@ export default function Clients() {
         </div>
       </motion.div>
 
-      {/* Client Success Story */}
       <motion.div
-        className="bg-white max-w-5xl mx-auto p-8 rounded-2xl shadow-xl border-l-4 border-pink-500"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="flex items-center mb-4 text-pink-600 gap-2">
-          <Trophy size={28} />
-          <h4 className="text-xl font-bold">Client Success Story</h4>
-        </div>
-        <p className="text-gray-700 text-lg leading-relaxed">
-          One of our most impactful collaborations was with <strong>Creator C</strong>. Starting with
-          just 5K followers and no monetization, our team worked closely to develop a comprehensive
-          content strategy, optimize SEO, and create visually captivating short-form videos. Within
-          8 months, Creator C grew to <span className="font-semibold text-pink-600">200K+ followers</span>,
-          secured brand deals with <strong>Myntra</strong>, and was featured on <strong>Jio Hotstar Originals</strong>.
-          Today, they are a leading name in lifestyle content with a sustainable revenue stream.
-        </p>
-      </motion.div>
+  className="bg-white max-w-6xl mx-auto p-10 rounded-2xl shadow-xl border-l-4 border-pink-500"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  {/* Header */}
+  <div className="flex items-center mb-4 text-pink-600 gap-2">
+    <Trophy size={28} />
+    <h4 className="text-xl font-bold">Client Success Story</h4>
+  </div>
+
+  {/* Story Description */}
+  <p className="text-gray-700 text-lg leading-relaxed mb-8">
+    One of our most impactful collaborations was with <strong>Creator C</strong>. Starting with
+    just 5K followers and no monetization, our team worked closely to develop a comprehensive
+    content strategy, optimize SEO, and create visually captivating short-form videos. Within
+    8 months, Creator C grew to <span className="font-semibold text-pink-600">200K+ followers</span>,
+    secured brand deals with <strong>Myntra</strong>, and was featured on <strong>Jio Hotstar Originals</strong>.
+    Today, they are a leading name in lifestyle content with a sustainable revenue stream.
+  </p>
+
+  {/* Metrics Summary */}
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+    <div className="flex items-center gap-4 bg-pink-100 p-4 rounded-xl shadow">
+      <Users className="text-pink-600" />
+      <div>
+        <p className="text-sm text-gray-600">Followers Gained</p>
+        <p className="text-xl font-bold text-pink-700">+195K</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 bg-indigo-100 p-4 rounded-xl shadow">
+      <DollarSign className="text-indigo-600" />
+      <div>
+        <p className="text-sm text-gray-600">Revenue Increase</p>
+        <p className="text-xl font-bold text-indigo-700">+400%</p>
+      </div>
+    </div>
+    <div className="flex items-center gap-4 bg-green-100 p-4 rounded-xl shadow">
+      <TrendingUp className="text-green-600" />
+      <div>
+        <p className="text-sm text-gray-600">Video Views</p>
+        <p className="text-xl font-bold text-green-700">10M+</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Growth Chart */}
+  <div className="bg-gray-50 p-6 rounded-xl shadow">
+    <h5 className="text-lg font-semibold text-gray-700 mb-4">Follower Growth Over Time</h5>
+    <ResponsiveContainer width="100%" height={300}>
+      <LineChart data={growthData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Line
+          type="monotone"
+          dataKey="followers"
+          stroke="#ec4899"
+          strokeWidth={3}
+          dot={{ r: 4 }}
+          activeDot={{ r: 6 }}
+        />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
+</motion.div>
     </div>
   );
 }
