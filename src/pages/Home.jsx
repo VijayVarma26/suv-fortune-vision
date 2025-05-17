@@ -1,9 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Scissors, TrendingUp } from 'lucide-react';
+import { Sparkles, Scissors, TrendingUp, HeartHandshake, Lightbulb } from 'lucide-react';
+
 
 export default function Home() {
+  const reasons = [
+    {
+      title: 'Creative Experts',
+      description: 'Award-winning team skilled in content, strategy, and storytelling.',
+      icon: <Lightbulb className="text-purple-600" size={36} />,
+      bg: 'from-purple-100 to-purple-200',
+    },
+    {
+      title: 'Proven Growth',
+      description: 'We’ve scaled creators from 5K to 200K+ followers with real ROI.',
+      icon: <TrendingUp className="text-yellow-600" size={36} />,
+      bg: 'from-yellow-100 to-yellow-200',
+    },
+    {
+      title: 'Client-Centric',
+      description: 'Your goals drive our strategy. Always transparent, always committed.',
+      icon: <HeartHandshake className="text-pink-600" size={36} />,
+      bg: 'from-pink-100 to-pink-200',
+    },
+  ];
   const services = [
     {
       title: 'Social Media Management',
@@ -99,17 +120,49 @@ export default function Home() {
     </section>
   );
       {/* Why Choose Us */}
-      <section className="py-20 bg-white text-center px-6">
-        <h2 className="text-4xl font-bold mb-6 text-gray-800">Why SUV Fortune Vision?</h2>
-        <p className="max-w-2xl mx-auto mb-10 text-gray-600 text-lg">
-          Trusted by Sony, Jio Hotstar, and Myntra — with 30+ years of combined experience, we deliver premium results with a client-first mindset.
-        </p>
-        <div className="flex flex-wrap justify-center gap-6">
-          <span className="bg-purple-100 px-5 py-3 rounded-full font-semibold">Creative Experts</span>
-          <span className="bg-pink-100 px-5 py-3 rounded-full font-semibold">Proven Growth</span>
-          <span className="bg-yellow-100 px-5 py-3 rounded-full font-semibold">Client-Centric</span>
+      <section className="relative py-24 px-6 bg-white text-gray-800 overflow-hidden">
+      {/* Background visuals */}
+      <div className="absolute top-[-80px] left-[-60px] w-[250px] h-[250px] bg-gradient-to-br from-pink-300 to-purple-400 opacity-20 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-[-80px] right-[-60px] w-[250px] h-[250px] bg-gradient-to-br from-yellow-300 to-indigo-300 opacity-20 rounded-full blur-3xl -z-10" />
+
+      <div className="max-w-5xl mx-auto text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold mb-6 bg-gradient-to-r from-indigo-500 to-pink-500 text-transparent bg-clip-text"
+        >
+          Why SUV Fortune Vision?
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-lg max-w-2xl mx-auto mb-12 text-gray-600"
+        >
+          Trusted by <strong>Sony</strong>, <strong>Jio Hotstar</strong>, and <strong>Myntra</strong> — with over 30 years of combined expertise,
+          we drive bold digital success stories for creators and brands alike.
+        </motion.p>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {reasons.map(({ title, description, icon, bg }, i) => (
+            <motion.div
+              key={title}
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2 }}
+              className={`p-6 rounded-2xl bg-gradient-to-br ${bg} shadow-xl text-left transition`}
+            >
+              <div className="mb-4">{icon}</div>
+              <h4 className="text-xl font-bold mb-2 text-gray-800">{title}</h4>
+              <p className="text-gray-700 leading-relaxed">{description}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Testimonials */}
       <section className="py-20 px-6 bg-gray-100">
