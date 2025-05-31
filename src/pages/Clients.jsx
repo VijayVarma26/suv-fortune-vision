@@ -4,7 +4,7 @@ import { Sparkles, Trophy, Users, TrendingUp, DollarSign } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 export default function Clients() {
-  const topBrands = ['Sony', 'MTV', 'AniMeta.ai', 'Garner Broadcasting', 'Videshi Studio'];
+  const topBrands = ['Sony', 'MTV India', 'AniMeta.ai', 'Garner Broadcasting', 'Videshi Studio', 'Creative XLNC'];
   const creators = [
     'Sachin Chaudhary',
     'Dharti Singh',
@@ -20,12 +20,12 @@ export default function Clients() {
   const growthData = [
     { month: 'Month 1', followers: 5000 },
     { month: 'Month 2', followers: 12000 },
-    { month: 'Month 3', followers: 30000 },
-    { month: 'Month 4', followers: 60000 },
-    { month: 'Month 5', followers: 100000 },
-    { month: 'Month 6', followers: 150000 },
-    { month: 'Month 7', followers: 180000 },
-    { month: 'Month 8', followers: 200000 },
+    { month: 'Month 3', followers: 38000 },
+    { month: 'Month 4', followers: 75000 },
+    { month: 'Month 5', followers: 140000 },
+    { month: 'Month 6', followers: 200000 },
+    { month: 'Month 7', followers: 280000 },
+    { month: 'Month 8', followers: 334000 },
   ];
 
   return (
@@ -104,7 +104,7 @@ export default function Clients() {
   {/* Story Description */}
   {/* Story Description */}
 <p className="text-gray-700 text-lg leading-relaxed mb-8">
-  One of our most impactful collaborations was with a lifestyle content creator who started with just 5K followers and no monetization. Our team developed a comprehensive content strategy, optimized SEO, and produced visually captivating short-form videos. Within 8 months, their following grew to <span className="font-semibold text-pink-600">200K+</span>, they secured brand deals with <strong>Myntra</strong>, and were featured on <strong>Jio Hotstar Originals</strong>. Today, they stand as a prominent name in the digital lifestyle space with a sustainable revenue stream.
+  One of our most impactful collaborations was with a lifestyle content creator who started with just 5K followers. Our team developed a comprehensive content strategy, optimized SEO, and produced visually captivating short-form videos. Within 8 months, their following grew to <span className="font-semibold text-pink-600">334K+</span>, they secured brand deals with <strong>Myntra</strong>, and were featured on <strong>Web Series</strong>. Today, they stand as a prominent name in the digital lifestyle space with a sustainable revenue stream.
 </p>
 
 
@@ -114,14 +114,14 @@ export default function Clients() {
       <Users className="text-pink-600" />
       <div>
         <p className="text-sm text-gray-600">Followers Gained</p>
-        <p className="text-xl font-bold text-pink-700">+195K</p>
+        <p className="text-xl font-bold text-pink-700">+334K</p>
       </div>
     </div>
     <div className="flex items-center gap-4 bg-indigo-100 p-4 rounded-xl shadow">
       <DollarSign className="text-indigo-600" />
       <div>
         <p className="text-sm text-gray-600">Revenue Increase</p>
-        <p className="text-xl font-bold text-indigo-700">+400%</p>
+        <p className="text-xl font-bold text-indigo-700">+1200%</p>
       </div>
     </div>
     <div className="flex items-center gap-4 bg-green-100 p-4 rounded-xl shadow">
