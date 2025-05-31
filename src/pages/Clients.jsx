@@ -6,16 +6,16 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 export default function Clients() {
   const topBrands = ['Sony', 'MTV', 'AniMeta.ai', 'Garner Broadcasting', 'Videshi Studio'];
   const creators = [
-    'Creator A',
-    'Creator B',
-    'Creator C',
-    'Creator D',
-    'Creator E',
-    'Creator F',
-    'Creator G',
-    'Creator H',
-    'Creator I',
-    'Creator J',
+    'Sachin Chaudhary',
+    'Dharti Singh',
+    'Somi Saxena',
+    'Tannu Saxena',
+    'Niraj Nakil',
+    'Omkar Narvekar',
+    'Ridhi Pandya',
+    'Anmol Arrora',
+    'Sidhart Dubey',
+    'Uzair Khan',
   ];
   const growthData = [
     { month: 'Month 1', followers: 5000 },
@@ -102,14 +102,11 @@ export default function Clients() {
   </div>
 
   {/* Story Description */}
-  <p className="text-gray-700 text-lg leading-relaxed mb-8">
-    One of our most impactful collaborations was with <strong>Creator C</strong>. Starting with
-    just 5K followers and no monetization, our team worked closely to develop a comprehensive
-    content strategy, optimize SEO, and create visually captivating short-form videos. Within
-    8 months, Creator C grew to <span className="font-semibold text-pink-600">200K+ followers</span>,
-    secured brand deals with <strong>Myntra</strong>, and was featured on <strong>Jio Hotstar Originals</strong>.
-    Today, they are a leading name in lifestyle content with a sustainable revenue stream.
-  </p>
+  {/* Story Description */}
+<p className="text-gray-700 text-lg leading-relaxed mb-8">
+  One of our most impactful collaborations was with a lifestyle content creator who started with just 5K followers and no monetization. Our team developed a comprehensive content strategy, optimized SEO, and produced visually captivating short-form videos. Within 8 months, their following grew to <span className="font-semibold text-pink-600">200K+</span>, they secured brand deals with <strong>Myntra</strong>, and were featured on <strong>Jio Hotstar Originals</strong>. Today, they stand as a prominent name in the digital lifestyle space with a sustainable revenue stream.
+</p>
+
 
   {/* Metrics Summary */}
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
