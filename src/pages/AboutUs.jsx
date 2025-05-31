@@ -10,27 +10,21 @@ import 'swiper/css/navigation';
 import 'tailwindcss/tailwind.css';
 
 const teamMembers = [
-  {
-    name: 'Sanjay Vasankar',
-    role: 'Founder & CEO',
+    {
+    name: 'Nita Wasankar',
+    role: 'Co-Founder & CEO',
     description: 'Strategic visionary with 15+ years of experience in media innovation.',
-    photo: '/images/sanjay.jpg', // Replace with actual path
-  },
-  {
-    name: 'Shaliendra Salunkhe',
-    role: 'Head of Production',
-    description: 'Expert in video editing and digital storytelling.',
     photo: '/images/shaliendra.jpg',
   },
   {
-    name: 'Ashwin Chinchkhede',
-    role: 'Content Strategist',
-    description: 'Crafts compelling narratives for brands and creators.',
-    photo: '/images/ashwin.jpg',
+    name: 'Sanjay Wasankar',
+    role: 'Head Of Operations & Co-Founder ',
+    description: 'Expert in video editing and digital storytelling.',
+    photo: '/images/sanjay.jpg', // Replace with actual path
   },
   {
     name: 'Rajesh Yadav',
-    role: 'SEO & Monetization Lead',
+    role: 'Head of Monetization & Growth',
     description: 'Drives visibility and revenue across digital platforms.',
     photo: '/images/rajesh.jpg',
   },
@@ -38,16 +32,14 @@ const teamMembers = [
 
 const getMemberBio = (name) => {
   switch (name) {
-    case 'Sanjay Vasankar':
-      return `Sanjay brings over 15 years of visionary leadership to SUV Fortune Vision. As Founder & CEO, he’s known for launching breakthrough digital campaigns, guiding major media houses and content creators toward unmatched success. His forward-thinking strategies have defined new paradigms in entertainment marketing, storytelling, and monetization.`;
-    case 'Shaliendra Salunkhe':
-      return `With a deep eye for cinematic storytelling and years of experience behind the editing desk, Shaliendra leads our production vertical. His finesse in editing and post-production has shaped viral content and award-winning digital series, pushing creative boundaries in short-form media.`;
-    case 'Ashwin Chinchkhede':
-      return `Ashwin is the narrative powerhouse of our team. He crafts content strategies that don’t just speak, but resonate. From brand storytelling to influencer engagement, he aligns creativity with business outcomes to create compelling campaigns that stand out in today’s saturated digital landscape.`;
+    case 'Sanjay Wasankar':
+      return `With over 30 years of experience in the television and film post-production industry, Sanjay leads operations with deep creative and technical insight. He has worked with major networks including Sony, HBO, POGO, Cartoon Network, and and has been instrumental in shaping countless iconic promos and special features. As Co-Founder and Head of Operations, Sanjay oversees end-to-end studio management, post-production workflows, and creative direction, ensuring every project meets the highest industry standards.`;
+    case 'Nita Wasankar':
+      return `A visionary leader and creative force, Nita Wasankar founded the company with a passion for storytelling and visual excellence. With a deep understanding of the media and entertainment industry, she brings a unique blend of strategic thinking and artistic flair to every project. As CEO, Nita drives the company’s mission to deliver innovative and high-quality content, while fostering a culture of creativity, collaboration, and excellence.`;
     case 'Rajesh Yadav':
-      return `Rajesh is a data-driven digital growth specialist. As our SEO and Monetization Lead, he ensures content not only reaches the right audience but also drives real results. With a keen grasp of platform algorithms and ad ecosystems, he turns creative assets into revenue-generating engines.`;
+      return `Rajesh drives the platform’s revenue strategies and audience expansion initiatives. With a dynamic background in digital media, content strategy, and market research, Rajesh brings a data-informed approach to optimizing content performance and unlocking new growth channels. His experience managing high-visibility YouTube channels and leading research projects empowers him to align editorial content with business goals, ensuring sustainable growth and enhanced viewer engagement.`;
     default:
-      return `This team member is an integral part of our journey, contributing expertise and energy to everything we do.`;
+      return ``;
   }
 };
 
@@ -100,7 +92,7 @@ export default function AboutUs() {
     <div className="flex items-start gap-4">
       <Users className="text-indigo-500 mt-1" size={22} />
       <p className="text-gray-700 text-base">
-        <strong>30+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
+        <strong>50+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
         and production excellence.
       </p>
     </div>
