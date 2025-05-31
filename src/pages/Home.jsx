@@ -170,19 +170,19 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[
             {
-              name: "Riya Mehta",
+              name: "Krishna Desai",
               role: "Fashion Influencer",
               story: "With SUV Fortune Vision, my reels went from 5K to over 100K views. Their editing gave my brand a signature vibe!",
               image: "https://randomuser.me/api/portraits/women/44.jpg",
             },
             {
-              name: "Arjun Bhatia",
+              name: "Rohit Khetrapal",
               role: "Fitness Coach",
               story: "Their content strategy helped me grow from 8K to 50K followers in just 3 months. Engagement tripled!",
               image: "https://randomuser.me/api/portraits/men/32.jpg",
             },
             {
-              name: "Tanya Verma",
+              name: "Prasanjit Sutar",
               role: "Makeup Artist & Blogger",
               story: "From managing my posts to editing my YouTube videos, they transformed my online identity completely.",
               image: "https://randomuser.me/api/portraits/women/68.jpg",
