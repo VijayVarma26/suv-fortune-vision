@@ -10,27 +10,21 @@ import 'swiper/css/navigation';
 import 'tailwindcss/tailwind.css';
 
 const teamMembers = [
-  {
-    name: 'Sanjay Vasankar',
-    role: 'Founder & CEO',
+    {
+    name: 'Nita Wasankar',
+    role: 'Co-Founder & CEO',
     description: 'Strategic visionary with 15+ years of experience in media innovation.',
-    photo: '/images/sanjay.jpg', // Replace with actual path
-  },
-  {
-    name: 'Shaliendra Salunkhe',
-    role: 'Head of Production',
-    description: 'Expert in video editing and digital storytelling.',
     photo: '/images/shaliendra.jpg',
   },
   {
-    name: 'Ashwin Chinchkhede',
-    role: 'Content Strategist',
-    description: 'Crafts compelling narratives for brands and creators.',
-    photo: '/images/ashwin.jpg',
+    name: 'Sanjay Wasankar',
+    role: 'Head Of Operations & Co-Founder ',
+    description: 'Expert in video editing and digital storytelling.',
+    photo: '/images/sanjay.jpg', // Replace with actual path
   },
   {
     name: 'Rajesh Yadav',
-    role: 'SEO & Monetization Lead',
+    role: 'Head of Monetization & Growth',
     description: 'Drives visibility and revenue across digital platforms.',
     photo: '/images/rajesh.jpg',
   },
@@ -38,16 +32,14 @@ const teamMembers = [
 
 const getMemberBio = (name) => {
   switch (name) {
-    case 'Sanjay Vasankar':
-      return `Sanjay brings over 15 years of visionary leadership to SUV Fortune Vision. As Founder & CEO, he’s known for launching breakthrough digital campaigns, guiding major media houses and content creators toward unmatched success. His forward-thinking strategies have defined new paradigms in entertainment marketing, storytelling, and monetization.`;
-    case 'Shaliendra Salunkhe':
-      return `With a deep eye for cinematic storytelling and years of experience behind the editing desk, Shaliendra leads our production vertical. His finesse in editing and post-production has shaped viral content and award-winning digital series, pushing creative boundaries in short-form media.`;
-    case 'Ashwin Chinchkhede':
-      return `Ashwin is the narrative powerhouse of our team. He crafts content strategies that don’t just speak, but resonate. From brand storytelling to influencer engagement, he aligns creativity with business outcomes to create compelling campaigns that stand out in today’s saturated digital landscape.`;
+    case 'Sanjay Wasankar':
+      return `With over 30 years of experience in the television and film post-production industry, Sanjay leads operations with deep creative and technical insight. He has worked with major networks including Sony, HBO, POGO, Cartoon Network, and and has been instrumental in shaping countless iconic promos and special features. As Co-Founder and Head of Operations, Sanjay oversees end-to-end studio management, post-production workflows, and creative direction, ensuring every project meets the highest industry standards.`;
+    case 'Nita Wasankar':
+      return `A visionary leader and creative force, Nita Wasankar founded the company with a passion for storytelling and visual excellence. With a deep understanding of the media and entertainment industry, she brings a unique blend of strategic thinking and artistic flair to every project. As CEO, Nita drives the company’s mission to deliver innovative and high-quality content, while fostering a culture of creativity, collaboration, and excellence.`;
     case 'Rajesh Yadav':
-      return `Rajesh is a data-driven digital growth specialist. As our SEO and Monetization Lead, he ensures content not only reaches the right audience but also drives real results. With a keen grasp of platform algorithms and ad ecosystems, he turns creative assets into revenue-generating engines.`;
+      return `Rajesh drives the platform’s revenue strategies and audience expansion initiatives. With a dynamic background in digital media, content strategy, and market research, Rajesh brings a data-informed approach to optimizing content performance and unlocking new growth channels. His experience managing high-visibility YouTube channels and leading research projects empowers him to align editorial content with business goals, ensuring sustainable growth and enhanced viewer engagement.`;
     default:
-      return `This team member is an integral part of our journey, contributing expertise and energy to everything we do.`;
+      return ``;
   }
 };
 
@@ -100,7 +92,7 @@ export default function AboutUs() {
     <div className="flex items-start gap-4">
       <Users className="text-indigo-500 mt-1" size={22} />
       <p className="text-gray-700 text-base">
-        <strong>30+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
+        <strong>50+ years of combined expertise</strong> in content creation, digital strategy, brand storytelling,
         and production excellence.
       </p>
     </div>
@@ -148,31 +140,24 @@ export default function AboutUs() {
   whileInView={{ opacity: 1, scale: 1 }}
   transition={{ delay: 0.2, duration: 0.6 }}
 >
-  <h3 className="text-2xl font-bold text-pink-600 mb-8 flex items-center gap-2">
+  <h3 className="text-3xl font-extrabold text-pink-600 mb-10 flex items-center gap-2">
     <Users className="text-pink-600" /> Meet the Core Team
   </h3>
 
-  <div className="space-y-12">
+  <div className="space-y-10">
     {teamMembers.map((member, index) => (
       <motion.div
         key={member.name}
-        className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-pink-50 p-6 rounded-xl shadow-md"
-        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        className="border-l-4 border-pink-500 bg-pink-50 p-6 rounded-xl shadow-md"
+        initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.2 }}
+        transition={{ duration: 0.6, delay: index * 0.15 }}
       >
-        <img
-          src={member.photo || 'https://via.placeholder.com/300x300'}
-          alt={member.name}
-          className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
-        />
-        <div className="flex-1 text-left">
-          <h4 className="text-xl md:text-2xl font-bold text-pink-700">{member.name}</h4>
-          <p className="text-pink-600 font-medium text-lg mb-4">{member.role}</p>
-          <p className="text-gray-700 text-base leading-relaxed">
-            {getMemberBio(member.name)}
-          </p>
-        </div>
+        <h4 className="text-2xl md:text-3xl font-bold text-pink-700 mb-2">{member.name}</h4>
+        <p className="text-lg text-pink-600 font-semibold mb-4">{member.role}</p>
+        <p className="text-gray-800 text-base md:text-lg leading-relaxed tracking-wide">
+          {getMemberBio(member.name)}
+        </p>
       </motion.div>
     ))}
   </div>
