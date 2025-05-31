@@ -140,31 +140,24 @@ export default function AboutUs() {
   whileInView={{ opacity: 1, scale: 1 }}
   transition={{ delay: 0.2, duration: 0.6 }}
 >
-  <h3 className="text-2xl font-bold text-pink-600 mb-8 flex items-center gap-2">
+  <h3 className="text-3xl font-extrabold text-pink-600 mb-10 flex items-center gap-2">
     <Users className="text-pink-600" /> Meet the Core Team
   </h3>
 
-  <div className="space-y-12">
+  <div className="space-y-10">
     {teamMembers.map((member, index) => (
       <motion.div
         key={member.name}
-        className="flex flex-col md:flex-row items-center md:items-start gap-8 bg-pink-50 p-6 rounded-xl shadow-md"
-        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        className="border-l-4 border-pink-500 bg-pink-50 p-6 rounded-xl shadow-md"
+        initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.2 }}
+        transition={{ duration: 0.6, delay: index * 0.15 }}
       >
-        <img
-          src={member.photo || 'https://via.placeholder.com/300x300'}
-          alt={member.name}
-          className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
-        />
-        <div className="flex-1 text-left">
-          <h4 className="text-xl md:text-2xl font-bold text-pink-700">{member.name}</h4>
-          <p className="text-pink-600 font-medium text-lg mb-4">{member.role}</p>
-          <p className="text-gray-700 text-base leading-relaxed">
-            {getMemberBio(member.name)}
-          </p>
-        </div>
+        <h4 className="text-2xl md:text-3xl font-bold text-pink-700 mb-2">{member.name}</h4>
+        <p className="text-lg text-pink-600 font-semibold mb-4">{member.role}</p>
+        <p className="text-gray-800 text-base md:text-lg leading-relaxed tracking-wide">
+          {getMemberBio(member.name)}
+        </p>
       </motion.div>
     ))}
   </div>
