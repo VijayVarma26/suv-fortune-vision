@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sparkles, Scissors, TrendingUp, HeartHandshake, Lightbulb } from 'lucide-react';
+import PrasenjitImage from '../assets/images/PrasanjitSutar.jpg'; // adjust the path as needed
+import KrishnaImage from '../assets/images/KrishnaDesai.jpg'; // adjust the path as needed
+import SachinImage from '../assets/images/SachinChaudhary.jfif'; // adjust the path as needed
 
 
 export default function Home() {
@@ -170,23 +173,26 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {[
             {
-              name: "Riya Mehta",
-              role: "Fashion Influencer",
-              story: "With SUV Fortune Vision, my reels went from 5K to over 100K views. Their editing gave my brand a signature vibe!",
-              image: "https://randomuser.me/api/portraits/women/44.jpg",
+              name: "Krishna Desai",
+              role: "Chief Product Officer, AniMeta.ai",
+              story: "SUV Fortune Vision has been an incredible creative partner. Their professionalism, quick turnaround, and understanding of brand tone made the entire collaboration seamless and impactful.",
+              image: KrishnaImage,
             },
             {
-              name: "Arjun Bhatia",
-              role: "Fitness Coach",
-              story: "Their content strategy helped me grow from 8K to 50K followers in just 3 months. Engagement tripled!",
-              image: "https://randomuser.me/api/portraits/men/32.jpg",
+              name: "Prasenjit Sutar",
+              role: "Founder at Creative XLNC",
+              story: "Appreciate the professionalism and creativity the team brought to every project. It’s been a pleasure working with SUV Fortune Vision.",
+              image: PrasenjitImage,
             },
+
             {
-              name: "Tanya Verma",
-              role: "Makeup Artist & Blogger",
-              story: "From managing my posts to editing my YouTube videos, they transformed my online identity completely.",
-              image: "https://randomuser.me/api/portraits/women/68.jpg",
+              name: "Sachin Chaudhary",
+              role: "Musician",
+              story: "With SUV Fortune Vision’s guidance, I grew my YouTube channel from 3K to 112K subscribers in just 7 months. Their content and growth strategy transformed my online presence.",
+              image: SachinImage,
             },
+
+            
           ].map(({ name, role, story, image }, index) => (
             <motion.div
               key={index}
