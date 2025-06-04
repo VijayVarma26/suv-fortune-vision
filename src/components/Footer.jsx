@@ -27,7 +27,7 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-2">Contact Us</h3>
-          <p className="flex items-center gap-2"><Phone size={16} /> +91 99999 99999</p>
+          <p className="flex items-center gap-2"><Phone size={16} /> +91 99675 41459</p>
           <p className="flex items-center gap-2"><Mail size={16} /> info@suvfortune.com</p>
           <div className="flex gap-4 mt-4">
             <a href="#" className="hover:text-white"><Facebook size={20} /></a>
