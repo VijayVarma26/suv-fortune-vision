@@ -182,12 +182,12 @@ export default function AboutUs() {
             >
               <Mail size={18} /> Contact Us
             </a>
-            <a
+            {/* <a
               href="/careers"
               className="bg-pink-500 text-white px-6 py-3 rounded-full shadow hover:bg-pink-600 transition flex items-center gap-2"
             >
               <Briefcase size={18} /> Join Our Team
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>
