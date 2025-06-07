@@ -4,7 +4,7 @@ import { Sparkles, Trophy, Users, TrendingUp, DollarSign } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 
 export default function Clients() {
-  const topBrands = ['Sony', 'MTV India', 'AniMeta.ai', 'Garner Broadcasting', 'Videshi Studio', 'Creative XLNC'];
+  const topBrands = ['Sony', 'MTV India', 'AniMeta.ai', 'Garner Broadcasting', 'Videshi Studio', 'Creative XLNC', 'EFG Digital'];
   const creators = [
     'Sachin Chaudhary',
     'Dharti Singh',
